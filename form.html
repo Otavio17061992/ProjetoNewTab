@@ -25,21 +25,25 @@
     </header>
     <main>
        <section>
-          <form action="./index.html">
-              <label for="name" >nome</label>
+          <form action="" class="formulario-entregue">
+            <div class="linha-nome">  
+                <label for="name" >Nome:</label><br>
                 <input type="text" placeholder="Seu nome" required name="name" id="name">
-                
-              <label for="telefone">telefone</label>   
-               <input type="submit" value="salver" name="Salvar" id="phone">
-
-              <label for="name">Experiência previa</label>
+            </div>  
+            <div class="linha-telefone">  
+              <label for="telefone">Telefone:</label><br>   
+               <input type="text"  placeholder="seu telefone" id="phone">
+            </div>
+            <div class="linha-experiencia">
+              <label for="name">Experiência prévia:</label><br>
               <input type="radio" name="xp" id="xp-yes" for="xp-yes"><label>
                   Sim 
               </label>
               <input type="radio" name="xp" id="xp-no" for="xp-no"><label>
                   Não 
               </label>
-
+            </div>
+            <input type="submit" id="btn-enviar">
           </form> 
        </section>
 

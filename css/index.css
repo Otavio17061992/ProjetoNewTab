@@ -1,9 +1,8 @@
 /*<------------------ config Pagina Inicial------------------>*/
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body, ul {
+    margin: 0px;
+    padding: 0px;
 }
 
 html {
@@ -18,51 +17,42 @@ img {
 
 a {
     text-decoration: none;
-    color: aliceblue;
+    color: rgb(28, 30, 31);
+    padding: 2px;
+    border-radius: 10px;
 }
 
 a:hover {
-    background-image: linear-gradient(100deg, #ff0000 12%, blue 30%, rgb(24, 35, 190) 80%);
+    color: aliceblue;
+    border-radius: 10px;
+    padding: 2px;
+    background-image: linear-gradient(100deg, rgb(12, 12, 148) 30%, rgb(87, 126, 255) 50%, #ff0000 100%);
 
 }
 /*<------------------Config Header------------------>*/
 
 
-.cabecalho {
+
+#header {
     display: flex;
-    box-sizing: border-box;
+    align-items: center;
     height: auto;
     padding: 1rem;
-    align-items: center;
-    width: 100%;
     justify-content: space-between;
-    background: linear-gradient(100deg, rgba(24, 207, 168, 0.137), rgb(0, 238, 255) )
+    background: linear-gradient(109deg, rgba(0, 0, 255, 0.205), rgb(0, 255, 221));
+
 }
 
-.menu-navegacao {
-    justify-content: space-between;
+
+#menu {
     display: flex;
-    flex-direction: row;
+    list-style: none;
     gap: .5rem;
-}
-
-.menu-navegacao a{
-    flex: 1;
-    background-image: linear-gradient(100deg, #2232c2 12%, blue 30%, rgb(255, 36, 36) 80%);
-	text-align: center;
-	font-size: 1em;
-    border-radius: 10px;
-    padding: .2rem;
-    font-weight: 600;
 }
 
 #btn-mobile {
     display: none;
 }
-
-
-
-
 
 /* <------------midas Guery---------------->*/
 
@@ -70,19 +60,84 @@ a:hover {
 @media  (max-width: 620px) {
 
     #btn-mobile {
-        display: block;
+        display: flex;
+        border-radius: 9px;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        background: linear-gradient(109deg, rgba(0, 0, 255, 0.205), rgb(0, 255, 221));
     }
 
-    .menu-navegacao{
+    #header {
+        background: linear-gradient(109deg, rgba(0, 0, 255, 0.205), rgb(0, 255, 221));
+    }
+
+    #menu{
         display: none;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        transition: .6s;
+        background: linear-gradient(352deg, rgb(0, 0, 255), rgb(0, 255, 221));
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+        text-align: center;
+        margin-top: 10px;
     }
 
+    #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+        display: block;
+
+    }
+
+    
+
+    #menu a {
+        display: block;
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: solid rgba(0, 0, 0, .05);
+    }
 
     img {
         width: 38%;
-        margin: auto;
-        padding: 10px;
+        
     }
 
+    #hamburguer {
+        border-top: 2px solid; 
+        width: 20px;
+        color: #ff0000;
+    }
+    #hamburguer::after,  #hamburguer::before{
+        display: block;
+        content: '';
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        display: block;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+
+    #nav.active #hamburguer {
+        border-top-color: transparent;
+    }
+    #nav.active #hamburguer::before {
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after{
+        transform: rotate(-135deg);
+        top: -7px
+
+    }
+    
 }
     

@@ -1,0 +1,15 @@
+.list {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.list tr:nth-child(1) {
+    vertical-align: top;
+    background: rgb(8, 8, 8);
+    color: white;
+    font-weight: bold;
+
+}
+.list tr td {
+    padding: 5px;
+}

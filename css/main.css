@@ -1,0 +1,27 @@
+/*<------------------ config Pagina Inicial------------------>*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1.2rem;
+
+}
+
+img {
+    width: 17%;
+}
+/*<------------------Config Header------------------>*/
+
+
+.cabecalho {
+    display: flex;
+    background: linear-gradient(90deg, rgba(24, 207, 168, 0.137), rgb(0, 238, 255) )
+}
+
+.menu-navegacao {
+    justify-content: space-around;
+}
